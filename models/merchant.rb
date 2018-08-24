@@ -36,6 +36,9 @@ class Merchant
   end
 
   def self.all
+    sql = "SELECT * FROM merchants"
+    results = SqlRunner.run(sql)
+    # results.map_items
 
   end
 
