@@ -20,6 +20,8 @@ transaction1 = Transaction.new({
   'amount' => 2.50
   })
 
+transaction2 =
+
   binding.pry
 
   nil

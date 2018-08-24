@@ -52,7 +52,10 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
-  def total_amount
+  def self.total_amount
+    transactions = self.all
+    amounts = transactions.map { |transaction| transaction.amount }
+    amounts.reduce(:+)
   end
 
 
