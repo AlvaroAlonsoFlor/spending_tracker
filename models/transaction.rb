@@ -35,6 +35,15 @@ class Transaction
     results = SqlRunner.run(sql, values)
   end
 
+  def merchant
+    sql = "SELECT * FROM merchants
+    WHERE id = $1"
+    values = [@merchant_id]
+    result = SqlRunner.run(sql,values)
+    Merchant.new(result[0])
+
+  end
+
   def self.map_items(items)
     items.map { |item| Transaction.new(item)  }
   end
