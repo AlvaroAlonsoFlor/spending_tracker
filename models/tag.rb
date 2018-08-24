@@ -1,6 +1,8 @@
+require_relative('../db/sql_runner')
+
 class Tag
-  attr_reader :id
-  attr_accessor :category
+  attr_reader (:id)
+  attr_accessor (:category)
 
   def initialize(info)
     @category = info['category']

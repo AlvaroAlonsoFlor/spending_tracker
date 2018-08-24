@@ -6,17 +6,17 @@ class TestTag < MiniTest::Test
   def setup
     @transaction1 = Transaction.new({
 
-      'description' => 'chocolate'
-      'merchant_id' => 1
-      'tag_id' => 1
+      'description' => 'chocolate',
+      'merchant_id' => 1,
+      'tag_id' => 1,
       'amount' => 1
     })
 
     @transaction2 = Transaction.new({
 
-      'description' => 'cinema ticket'
-      'merchant_id' => 3
-      'tag_id' => 2
+      'description' => 'cinema ticket',
+      'merchant_id' => 3,
+      'tag_id' => 2,
       'amount' => 10
     })
 
