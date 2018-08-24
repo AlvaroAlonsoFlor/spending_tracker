@@ -1,6 +1,12 @@
 DROP TABLE merchants;
+DROP TABLE tags;
 
 CREATE TABLE merchants(
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255)
 );
+
+CREATE TABLE tags(
+  id SERIAL8 PRIMARY KEY,
+  category VARCHAR(255)
+)
