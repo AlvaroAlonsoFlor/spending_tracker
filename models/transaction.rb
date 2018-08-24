@@ -39,6 +39,12 @@ class Transaction
     items.map { |item| Transaction.new(item)  }
   end
 
+  def self.all
+    sql = "SELECT * FROM transactions"
+    results = SqlRunner.run(sql)
+    map_items(results)
+  end
+
   def total_amount
   end
 
