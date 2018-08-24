@@ -13,8 +13,20 @@ class Transaction
 
   end
 
-  # def self.total_amount
-  #   transactions = self.map {|transaction| transaction.amount}
-  #   transactions.reduce(:+)
-  # end
+  def save
+    sql = "INSERT INTO transactions
+    (description, merchant_id, tag_id, amount)
+    VALUES
+    ($1, $2, $3, $4)
+    RETURNING id
+    "
+    values =[@description, @merchant_id, @tag_id, @amount]
+    results = SqlRunner.run(sql, values)
+    @id = results[0]['id'].to_i
+  end
+
+  def total_amount
+  end
+
+
 end

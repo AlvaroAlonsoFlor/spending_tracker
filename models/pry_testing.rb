@@ -13,6 +13,13 @@ treats = Tag.new({
   'category' => 'treats'
   })
 
+transaction1 = Transaction.new({
+  'description' => "chocolate",
+  'merchant_id' => 1,
+  'tag_id' => 1,
+  'amount' => 2.50
+  })
+
   binding.pry
 
   nil
