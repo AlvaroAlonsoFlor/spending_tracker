@@ -30,5 +30,10 @@ class Tag
     results = SqlRunner.run(sql, values)
   end
 
-  
+  def self.map_items(items)
+    items.map { |item| Tag.new(item)  }
+  end
+
+
+
 end
