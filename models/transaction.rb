@@ -35,6 +35,10 @@ class Transaction
     results = SqlRunner.run(sql, values)
   end
 
+  def self.map_items(items)
+    items.map { |item| Transaction.new(item)  }
+  end
+
   def total_amount
   end
 
