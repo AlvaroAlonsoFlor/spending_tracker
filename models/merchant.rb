@@ -41,8 +41,11 @@ class Merchant
     map_items(results)
   end
 
-  def self.delete_by_id
-
+  def self.delete_by_id(id)
+    sql = "DELETE FROM merchants
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
 
