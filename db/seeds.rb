@@ -31,7 +31,7 @@ food = Tag.new({
   'category' => 'food'
   })
 
-transport = Merchant.new({
+transport = Tag.new({
   'category' => 'transport'
   })
 
