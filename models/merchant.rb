@@ -19,11 +19,16 @@ class Merchant
     values =[@name]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
-
   end
 
   def update
-
+    sql = "UPDATE merchants
+    SET
+    name = $2
+    WHERE id = $1
+    "
+    values = [@id, @name]
+    results = SqlRunner.run(sql, values)
   end
 
   def map_items
