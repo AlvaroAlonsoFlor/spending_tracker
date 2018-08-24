@@ -19,4 +19,16 @@ class Tag
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
   end
+
+  def update
+    sql = "UPDATE tags
+    SET
+    category = $2
+    WHERE id = $1
+    "
+    values = [@id, @category]
+    results = SqlRunner.run(sql, values)
+  end
+
+  
 end
