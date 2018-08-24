@@ -7,4 +7,6 @@ class Merchant
     @id = info['id'].to_i if info['id']
   end
 
+  
+
 end
