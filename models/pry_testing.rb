@@ -3,6 +3,16 @@ require_relative('merchant')
 require_relative('tag')
 require_relative('transaction')
 
-binding.pry
 
-nil
+
+groceries = Tag.new({
+  'category' => 'groceries'
+  })
+
+treats = Tag.new({
+  'category' => 'treats'
+  })
+
+  binding.pry
+
+  nil

@@ -7,4 +7,16 @@ class Tag
     @id = info['id'].to_i if info['id']
 
   end
+
+  def save
+    sql = "INSERT INTO tags
+    (category)
+    VALUES
+    ($1)
+    RETURNING id
+    "
+    values =[@category]
+    results = SqlRunner.run(sql, values)
+    @id = results[0]['id'].to_i
+  end
 end
