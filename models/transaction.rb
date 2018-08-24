@@ -12,4 +12,9 @@ class Transaction
     @amount = info['amount'].to_f.round(2)
 
   end
+
+  # def self.total_amount
+  #   transactions = self.map {|transaction| transaction.amount}
+  #   transactions.reduce(:+)
+  # end
 end
