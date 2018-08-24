@@ -31,6 +31,8 @@ class TestTag < MiniTest::Test
   end
 
   # NOT POSSIBLE WITHOUT INTERACTING WITH A DATABASE
+  # UNLESS I WANT TO TRANSFORM THE TOTAL_AMOUNT METHOD AND PASS AN ARRAY OF OBJECTS TO IT
+  # MAYBE FOR THE BUDGET EXTENSION?
 
   # def test_total_amount
   #   assert_equal(11, Transaction.total_amount)

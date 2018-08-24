@@ -52,6 +52,10 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
+  #TOTAL_AMOUNT
+
+  # I might refactor passing an array of objects in the future, for now without parameters seems to be more efficent and easy to use. More in the specs.
+
   def self.total_amount
     transactions = self.all
     amounts = transactions.map { |transaction| transaction.amount }
