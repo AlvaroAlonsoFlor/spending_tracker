@@ -31,8 +31,8 @@ class Merchant
     results = SqlRunner.run(sql, values)
   end
 
-  def map_items
-
+  def map_items(items)
+    items.map { |item| Merchant.new(item)  }
   end
 
   def self.all
@@ -40,9 +40,10 @@ class Merchant
     results = SqlRunner.run(sql)
     # results.map_items
 
+
   end
 
-  def delete_by_id
+  def self.delete_by_id
 
   end
 
