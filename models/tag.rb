@@ -43,7 +43,7 @@ class Tag
   end
 
   def self.find_by_id(id)
-    sql = "SELECT FROM tags
+    sql = "SELECT * FROM tags
     WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
