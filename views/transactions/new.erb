@@ -1,6 +1,13 @@
 <form method="post" action="/transactions">
 
     <label for="tag_id">Tag:</label>
+      <select id="tag" name="tag_id">
+        <% for tag in @tags %>
+          <option value="<%= tag.id %>"> <%= tag.category %></option>
+
+        <% end %>
+      </select>
+
 
     <label for="merchant">Merchant:</label>
       <select id="merchant" name="merchant_id">
@@ -14,6 +21,9 @@
 
     <label for="description">Description:</label>
     <input id="description" type="text" name="description" />
+
+    <label for="amount">Amount:</label>
+    <input id="amount" type="number" placeholder="It must be a number" name="description" />
 
 
 
