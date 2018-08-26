@@ -61,7 +61,7 @@ class Transaction
     map_items(results)
   end
 
-  def self.delete_by_id(id)
+  def self.find_by_id(id)
     sql = "SELECT FROM transactions
     WHERE id = $1"
     values = [id]

@@ -42,7 +42,7 @@ class Tag
     map_items(results)
   end
 
-  def self.delete_by_id(id)
+  def self.find_by_id(id)
     sql = "SELECT FROM tags
     WHERE id = $1"
     values = [id]
