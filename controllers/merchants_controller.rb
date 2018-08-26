@@ -27,7 +27,7 @@ end
 #EDIT
 
 get '/merchants/:id/edit' do
-  @merchant = Merchant.find_by_id(:id)
+  @merchant = Merchant.find_by_id(params['id'])
   erb(:'merchants/edit')
 end
 

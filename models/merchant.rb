@@ -45,7 +45,8 @@ class Merchant
     sql = "SELECT FROM merchants
     WHERE id = $1"
     values = [id]
-    SqlRunner.run(sql, values)
+    result = SqlRunner.run(sql, values)[0]
+    Merchant.new(result)
   end
 
   def self.delete_by_id(id)
