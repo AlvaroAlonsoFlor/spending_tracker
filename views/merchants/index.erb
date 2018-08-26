@@ -1,1 +1,5 @@
-heeey
+<ul>
+  <% for merchant in @merchants %>
+  <li>Id: <%= merchant.id %> | Merchant: <%= merchant.name %> | <button type="button" name="button">Edit</button> <button type="button" name="button">Delete</button> </li>
+  <% end %>
+</ul>
