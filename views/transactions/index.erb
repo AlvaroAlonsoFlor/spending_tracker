@@ -1,6 +1,6 @@
 <ul>
   <% for transaction in @transactions %>
-  <li> Tag: <%= transaction.tag.category %> | Merchant: <%= transaction.merchant.name %> | Description: <%= transaction.description %> | Id: <%= transaction.id %> | <button type="button" description="button"><a href="/transactions/<%= transaction.id %>/edit">Edit</a>
+  <li> Tag: <%= transaction.tag.category %> | Merchant: <%= transaction.merchant.name %> | Amount <%= transaction.amount %> | Description: <%= transaction.description %> | Id: <%= transaction.id %> | <button type="button" description="button"><a href="/transactions/<%= transaction.id %>/edit">Edit</a>
     <form action="/transactions/<%= transaction.id %>/delete" method="post"> <button type="submit" formmethod="post">Delete</button> </form> </li>
   <% end %>
 </ul>
