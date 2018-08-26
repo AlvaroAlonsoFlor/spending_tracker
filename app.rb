@@ -6,5 +6,6 @@ require_relative('controllers/transactions_controller')
 also_reload('./models/*')
 
 get '/' do
+  @transactions = Transaction.all[0]
   erb(:index)
 end
