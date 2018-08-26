@@ -1,5 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
+require('pry-byebug')
 require_relative('../models/merchant')
 also_reload('../models/*')
 
@@ -42,6 +43,6 @@ end
 #DELETE
 
 post '/merchants/:id/delete' do
-  Merchant.find_by_id(params[:id]).delete
+  Merchant.delete_by_id(params[:id])
   redirect '/merchants'
 end
