@@ -73,8 +73,7 @@ class Transaction
     sql = "DELETE FROM transactions
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql, values)[0]
-    Transaction.new(result)
+    result = SqlRunner.run(sql, values)  
   end
 
   #TOTAL_AMOUNT
