@@ -36,3 +36,10 @@ get '/transactions/:id/edit' do
   @transaction = Transaction.find_by_id(params[:id])
   erb(:'transactions/edit')
 end
+
+# UPDATE
+
+put '/transactions/:id' do
+  Transaction.new(params).update
+  redirect '/transactions'
+end
