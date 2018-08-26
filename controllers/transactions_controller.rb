@@ -1,4 +1,6 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/transaction')
+require_relative('../models/tags')
+require_relative('../models/merchants')
 also_reload('../models/*')
