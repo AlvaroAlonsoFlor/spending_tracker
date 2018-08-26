@@ -16,3 +16,11 @@ end
 get '/tags/new' do
   erb(:'tags/new')
 end
+
+#CREATE
+
+post '/tags' do
+  new_tag = Tag.new(params)
+  new_tag.save
+  redirect '/tags'
+end
