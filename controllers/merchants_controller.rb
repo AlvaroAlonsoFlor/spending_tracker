@@ -27,7 +27,8 @@ end
 #EDIT
 
 get '/merchants/:id/edit' do
-  @merchant = Merchant.find_by_id(params['id'])
+  @merchant = Merchant.find_by_id(params[:id])
+  # For some reason params[:id] works with '' and :
   erb(:'merchants/edit')
 end
 
@@ -39,3 +40,8 @@ put '/merchants/:id' do
 end
 
 #DELETE
+
+post '/merchants/:id/delete' do
+  Merchant.find_by_id(params[:id]).delete
+  redirect '/merchants'
+end
