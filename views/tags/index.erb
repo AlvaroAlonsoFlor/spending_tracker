@@ -1,0 +1,6 @@
+<ul>
+  <% for tag in @tags %>
+  <li>Id: <%= tag.id %> | tag: <%= tag.category %> | <button type="button" category="button"><a href="/tags/<%= tag.id %>/edit">Edit</a>
+    <form action="/tags/<%= tag.id %>/delete" method="post"> <button type="submit" formmethod="post">Delete</button> </form> </li>
+  <% end %>
+</ul>
