@@ -23,3 +23,14 @@ post '/merchants' do
   new_merchant.save
   redirect '/merchants'
 end
+
+#EDIT
+
+get '/merchants/:id/edit' do
+  @merchant = Merchant.find_by_id(:id)
+  erb(:'merchants/edit')
+end
+
+#UPDATE
+
+#DELETE
