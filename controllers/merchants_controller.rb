@@ -33,7 +33,7 @@ end
 
 #UPDATE
 
-put 'merchants/:id' do
+put '/merchants/:id' do
   Merchant.new(params).update
   redirect '/merchants'
 end
