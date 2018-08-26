@@ -43,3 +43,10 @@ put '/transactions/:id' do
   Transaction.new(params).update
   redirect '/transactions'
 end
+
+#DELETE
+
+post '/transactions/:id/delete' do
+  Transaction.delete_by_id(params[:id])
+  redirect '/transactions'
+end
