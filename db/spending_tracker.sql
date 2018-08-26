@@ -19,3 +19,5 @@ CREATE TABLE transactions(
   tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE,
   amount REAL
 );
+
+--I still have to think if I want the user to be able to delete all the transactions related when deletes a tag or a merchant
