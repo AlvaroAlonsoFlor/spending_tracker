@@ -24,3 +24,10 @@ post '/tags' do
   new_tag.save
   redirect '/tags'
 end
+
+#EDIT
+
+get '/tags/:id/edit' do
+  @tags = Tag.find_by_id(params[:id])
+  erb(:'tags/edit')
+end

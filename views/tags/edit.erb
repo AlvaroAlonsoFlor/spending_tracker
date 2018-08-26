@@ -1,0 +1,8 @@
+<form method="post" action="/tags/<%= @tag.id %>" >
+  <input type="hidden" name="_method" value="put" />
+  <label for="category">Category:</label>
+  <input id="category" type="text" name="category" value="<%= @tag.name %>" />
+
+  <input type="submit" value="Edit tag">
+
+</form>
