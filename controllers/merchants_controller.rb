@@ -13,5 +13,5 @@ end
 # NEW
 
 get '/merchants/new' do
-
+  erb(:'merchants/new')
 end
