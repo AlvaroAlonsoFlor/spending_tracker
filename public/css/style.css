@@ -3,11 +3,6 @@ body {
   background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
 }
 
-a {
-  color: grey;
-  text-decoration: none;
-}
-
 
 
 ul {
@@ -22,17 +17,6 @@ li {
   padding: 5px;
   width: auto;
 }
-
-/* .button {
-  border-bottom: solid 1px tomato;
-  width: auto;
-
-}
-
-.button:hover{
-  background-color: white;
-  width: auto;
-} */
 
 
 

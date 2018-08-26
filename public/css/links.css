@@ -1,0 +1,22 @@
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover {
+  color:black;
+}
+
+/* navbar and header */
+
+.main_links {
+  color: white;
+}
+
+ a.main_links:link {
+  color: white;
+}
+
+a.main_links:hover {
+  color: orange;
+}
