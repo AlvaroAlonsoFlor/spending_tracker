@@ -38,3 +38,10 @@ put '/tags/:id' do
   Tag.new(params).update
   redirect '/tags'
 end
+
+#DELETE
+
+post '/tags/:id/delete' do
+  Tag.delete_by_id(params[:id])
+  redirect '/tags'
+end

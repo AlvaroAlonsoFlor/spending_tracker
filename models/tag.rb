@@ -54,8 +54,7 @@ class Tag
     sql = "DELETE FROM tags
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql, values)[0]
-    Tag.new(result)
+    result = SqlRunner.run(sql, values)
   end
 
 
