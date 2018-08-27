@@ -15,9 +15,9 @@ CREATE TABLE tags(
 CREATE TABLE transactions(
   id SERIAL8 PRIMARY KEY,
   description VARCHAR(255),
-  merchant_id INT8 REFERENCES merchants(id) ON DELETE CASCADE,
-  tag_id INT8 REFERENCES tags(id) ON DELETE CASCADE,
+  merchant_id INT8 REFERENCES merchants(id),
+  tag_id INT8 REFERENCES tags(id),
   amount REAL
 );
 
---I still have to think if I want the user to be able to delete all the transactions related when deletes a tag or a merchant
+--You won't be able to delete tags or merchants that have transactions linked. Data safety feature
