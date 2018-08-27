@@ -16,7 +16,7 @@ class Transaction
 
   def save
     sql = "INSERT INTO transactions
-    (description, merchant_id, tag_id, amount)
+    (description, merchant_id, tag_id, amount, transaction_date)
     VALUES
     ($1, $2, $3, $4, $5)
     RETURNING id
@@ -76,10 +76,6 @@ class Transaction
     values = [id]
     result = SqlRunner.run(sql, values)
   end
-
-  #TOTAL_AMOUNT
-
-  # I might refactor passing an array of objects in the future, for now without parameters seems to be more efficent and easy to use. More in the specs.
 
   def self.total_amount
     transactions = self.all

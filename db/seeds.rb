@@ -44,14 +44,16 @@ transaction1 = Transaction.new({
   'description' => 'weekly shopping',
   'merchant_id' => aldi.id,
   'tag_id' => food.id,
-  'amount' => 23.17
+  'amount' => 23.17,
+  'transaction_date' => '2018-07-30'
   })
 
 transaction2 = Transaction.new({
   'description' => 'monthly Riddacard',
   'merchant_id' => lothian_buses.id,
   'tag_id' => transport.id,
-  'amount' => 53
+  'amount' => 53,
+  'transaction_date' => '2018-08-03'
   })
 
 transaction1.save
