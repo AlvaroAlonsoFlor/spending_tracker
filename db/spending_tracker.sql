@@ -17,7 +17,8 @@ CREATE TABLE transactions(
   description VARCHAR(255),
   merchant_id INT8 REFERENCES merchants(id),
   tag_id INT8 REFERENCES tags(id),
-  amount REAL
+  amount REAL,
+  transaction_date DATE
 );
 
 --You won't be able to delete tags or merchants that have transactions linked. Data safety feature
