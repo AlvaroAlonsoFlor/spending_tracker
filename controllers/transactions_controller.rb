@@ -8,7 +8,7 @@ also_reload('../models/*')
 # INDEX
 
 get '/transactions' do
-  @transactions = Transaction.all
+  @transactions = Transaction.sort_by_date
   erb(:'transactions/index')
 end
 
