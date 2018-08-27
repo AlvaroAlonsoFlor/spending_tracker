@@ -1,6 +1,6 @@
 <ul>
   <% for merchant in @merchants %>
   <li>Id: <%= merchant.id %> | Merchant: <%= merchant.name %> | <button type="button" name="button"><a href="/merchants/<%= merchant.id %>/edit">Edit</a>
-    <form action="/merchants/<%= merchant.id %>/delete" method="post"> <button type="submit" formmethod="post">Delete</button> </form> </li>
+    <form action="/merchants/<%= merchant.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form> </li>
   <% end %>
 </ul>
