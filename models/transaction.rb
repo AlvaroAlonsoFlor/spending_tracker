@@ -10,6 +10,7 @@ class Transaction
     @merchant_id = info['merchant_id'].to_i
     @tag_id = info['tag_id'].to_i
     @amount = info['amount'].to_f.round(2)
+    @transaction_date = info['transaction_date']
 
   end
 
@@ -17,10 +18,10 @@ class Transaction
     sql = "INSERT INTO transactions
     (description, merchant_id, tag_id, amount)
     VALUES
-    ($1, $2, $3, $4)
+    ($1, $2, $3, $4, $5)
     RETURNING id
     "
-    values =[@description, @merchant_id, @tag_id, @amount]
+    values =[@description, @merchant_id, @tag_id, @amount, @transaction_date]
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
   end
@@ -28,10 +29,10 @@ class Transaction
   def update
     sql = "UPDATE transactions
     SET
-    description = $1, merchant_id = $2, tag_id = $3, amount = $4
+    description = $1, merchant_id = $2, tag_id = $3, amount = $4, transaction_date = $6
     WHERE id = $5
     "
-    values = [@description, @merchant_id, @tag_id, @amount, @id]
+    values = [@description, @merchant_id, @tag_id, @amount, @id, @transaction_date]
     results = SqlRunner.run(sql, values)
   end
 
@@ -73,7 +74,7 @@ class Transaction
     sql = "DELETE FROM transactions
     WHERE id = $1"
     values = [id]
-    result = SqlRunner.run(sql, values)  
+    result = SqlRunner.run(sql, values)
   end
 
   #TOTAL_AMOUNT
