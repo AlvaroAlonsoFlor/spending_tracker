@@ -83,5 +83,12 @@ class Transaction
     amounts.reduce(:+)
   end
 
+  def self.sort_by_date
+    sql = "SELECT * FROM transactions
+    ORDER BY(transaction_date) DESC"
+    result = SqlRunner.run(sql)
+    map_items(result)
+  end
+
 
 end
