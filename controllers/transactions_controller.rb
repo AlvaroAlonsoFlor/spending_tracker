@@ -12,6 +12,13 @@ get '/transactions' do
   erb(:'transactions/index')
 end
 
+# SHOW
+
+get '/transactions/month/:id' do
+  #call filter_by_month method
+  # erb(:'transactions/show_by_month')
+end
+
 # NEW
 
 get '/transactions/new' do

@@ -1,4 +1,10 @@
 <ul>
+  <span> <span>Filter by:</span>
+    <form class="" action="/transactions/" method="get">
+
+    </form>
+    </span>
+
   <% for transaction in @transactions %>
   <li class="display_area"> Tag: <%= transaction.tag.category %> |
     Merchant: <%= transaction.merchant.name %> |
