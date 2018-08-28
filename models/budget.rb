@@ -8,6 +8,9 @@ class Budget
     @amount = info['amount'].to_f.round(2)
     @start_date = info['start_date']
     @finish_date = info['finish_date']
+
+    # Value needed for spending method, creates an array of the instance transactions
+    @transactions = self.transactions
   end
 
   def save
@@ -50,13 +53,12 @@ class Budget
   # end
 
   def spending
-    # transactions = Budget.transactions
-    # amoun - sum of all transactions amount
+    amounts = @transactions.map { |transaction| transaction.amount }
+    amounts.reduce(:+)
   end
 
   def money_left
-    # @amount - spending
-
+    return @amount - self.spending
   end
 
 
