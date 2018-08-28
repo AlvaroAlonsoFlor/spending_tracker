@@ -111,5 +111,14 @@ class Transaction
     map_items(result)
   end
 
+  def self.filter_by_merchant(merchant_id)
+    sql = "SELECT * FROM transactions
+    WHERE merchant_id = $1"
+    values = [merchant_id]
+    result = SqlRunner.run(sql, values)
+    return if result.count == 0
+    map_items(result)
+  end
+
 
 end
