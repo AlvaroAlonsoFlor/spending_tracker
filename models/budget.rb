@@ -42,5 +42,13 @@ class Budget
     map_items(results)
   end
 
+  def self.find_by_id(id)
+    sql = "SELECT * FROM budgets
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values)[0]
+    Budget.new(result)
+  end
+
 
 end
