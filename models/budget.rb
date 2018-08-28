@@ -1,3 +1,6 @@
+require_relative('../db/sql_runner')
+require_relative('transaction')
+
 class Budget
   attr_reader(:id)
   attr_accessor(:name, :amount, :start_date, :finish_date )
@@ -61,7 +64,6 @@ class Budget
     return @amount - self.spending
   end
 
-
   def self.map_items(items)
     items.map { |item| Budget.new(item)  }
   end
@@ -86,8 +88,6 @@ class Budget
     values = [id]
     result = SqlRunner.run(sql, values)
   end
-
-
 
 
 end
