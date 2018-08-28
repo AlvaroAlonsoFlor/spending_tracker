@@ -20,6 +20,11 @@ get '/transactions/filter/date' do
   erb(:'transactions/filter')
 end
 
+get '/transactions/filter/tag' do
+  @transactions = Transaction.filter_by_tag(params[:id])
+  erb(:'transactions/filter')
+end
+
 # NEW
 
 get '/transactions/new' do
