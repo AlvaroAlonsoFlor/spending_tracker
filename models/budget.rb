@@ -57,5 +57,16 @@ class Budget
     result = SqlRunner.run(sql, values)
   end
 
+  def transactions
+    sql = "SELECT * FROM transactions
+    WHERE transaction_date
+    BETWEEN start_date AND finish_date
+    ORDER BY transaction_date DESC"
+    result = SqlRunner.run(sql, values)
+    return if result.count == 0
+    result.map { |transaction| Transaction.new(transaction)  }
+
+  end
+
 
 end
