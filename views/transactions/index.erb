@@ -2,18 +2,17 @@
   <span> <span>Filter by:</span>
 
     <button type="button" name="button"> date
-    <form class="" action="/transactions/filter" method="get">
+    <form class="" action="/transactions/filter/date" method="get">
       Month
-      <input type="number" name="month" min="1" max="12">
+      <input type="number" name="month" min="1" max="12" required>
       Year
-      <input type="number" name="year" min="2015" max="2100" step="1">
+      <input type="number" name="year" min="2015" max="2100" step="1" required>
 
       <input type="submit" value="Search date"/>
-
-
-
     </form>
     </button>
+
+
     </span>
 
   <% for transaction in @transactions %>

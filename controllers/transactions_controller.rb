@@ -14,7 +14,7 @@ end
 
 # SHOW
 
-get '/transactions/filter' do
+get '/transactions/filter/date' do
   #call filter_by_month method
   @transactions = Transaction.filter_by_date(params[:year], params[:month])
   erb(:'transactions/filter')
