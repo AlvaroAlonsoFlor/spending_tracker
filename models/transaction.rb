@@ -102,5 +102,14 @@ class Transaction
 
   end
 
+  def self.filter_by_tag(tag_id)
+    sql = "SELECT * FROM transactions
+    WHERE tag_id = $1"
+    values = [tag_id]
+    result = SqlRunner.run(sql, values)
+    return if result.count == 0
+    map_items(result)
+  end
+
 
 end
