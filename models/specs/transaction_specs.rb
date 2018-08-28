@@ -9,7 +9,8 @@ class TestTag < MiniTest::Test
       'description' => 'chocolate',
       'merchant_id' => 1,
       'tag_id' => 1,
-      'amount' => 1
+      'amount' => 1,
+      'transaction_date' => '2018/08/06'
     })
 
     @transaction2 = Transaction.new({
@@ -17,7 +18,8 @@ class TestTag < MiniTest::Test
       'description' => 'cinema ticket',
       'merchant_id' => 3,
       'tag_id' => 2,
-      'amount' => 10
+      'amount' => 10,
+      'transaction_date' => '2018/08/04'
     })
 
   end

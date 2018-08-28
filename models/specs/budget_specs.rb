@@ -1,6 +1,7 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../budget')
+require_relative('../transaction')
 
 class TestBudget < MiniTest::Test
   def setup
@@ -11,6 +12,24 @@ class TestBudget < MiniTest::Test
       'finish_date' => '2018/08/31'
     }
     @budget1 = Budget.new(data)
+
+    @transaction1 = Transaction.new({
+
+      'description' => 'chocolate',
+      'merchant_id' => 1,
+      'tag_id' => 1,
+      'amount' => 1,
+      'transaction_date' => '2018/08/06'
+    })
+
+    @transaction2 = Transaction.new({
+
+      'description' => 'cinema ticket',
+      'merchant_id' => 3,
+      'tag_id' => 2,
+      'amount' => 10,
+      'transaction_date' => '2018/08/04'
+    })
 
   end
 
@@ -28,5 +47,10 @@ class TestBudget < MiniTest::Test
 
   def test_finish_date
     assert_equal('2018/08/31', @budget1.finish_date)
+  end
+
+  def test_spending
+    transactions = [@transaction1, @transaction2]
+    assert_equal(11, @budget1.spending(transactions))
   end
 end

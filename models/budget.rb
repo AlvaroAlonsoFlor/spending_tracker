@@ -32,6 +32,24 @@ class Budget
     results = SqlRunner.run(sql, values)
   end
 
+  def transactions
+    sql = "SELECT * FROM transactions
+    WHERE transaction_date
+    BETWEEN $1 AND $2
+    ORDER BY transaction_date DESC"
+    values = [@start_date, @finish_date]
+    result = SqlRunner.run(sql, values)
+    return if result.count == 0
+    result.map { |transaction| Transaction.new(transaction)  }
+  end
+
+
+  def spending(transactions)
+    amounts = transactions.map { |transaction| transaction.amount }
+    amounts.reduce(:+)
+  end
+
+
   def self.map_items(items)
     items.map { |item| Budget.new(item)  }
   end
@@ -57,17 +75,7 @@ class Budget
     result = SqlRunner.run(sql, values)
   end
 
-  def transactions
-    sql = "SELECT * FROM transactions
-    WHERE transaction_date
-    BETWEEN $1 AND $2
-    ORDER BY transaction_date DESC"
-    values = [@start_date, @finish_date]
-    result = SqlRunner.run(sql, values)
-    return if result.count == 0
-    result.map { |transaction| Transaction.new(transaction)  }
 
-  end
 
 
 end
