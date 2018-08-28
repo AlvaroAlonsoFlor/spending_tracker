@@ -1,0 +1,16 @@
+<ul>
+  
+  <% for transaction in @transactions %>
+  <li class="display_area"> Tag: <%= transaction.tag.category %> |
+    Merchant: <%= transaction.merchant.name %> |
+    Description: <%= transaction.description %> | Amount <%= transaction.amount %> |
+    Date: <%= transaction.transaction_date %> |
+    Id: <%= transaction.id %> |
+
+      <button type="button" description="button"><a href="/transactions/<%= transaction.id %>/edit">Edit</a>
+
+      <form action="/transactions/<%= transaction.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form>
+    </li>
+  <% end %>
+
+</ul>
