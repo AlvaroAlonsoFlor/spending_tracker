@@ -47,3 +47,8 @@ put '/budgets/:id' do
 end
 
 # DELETE
+
+post '/budgets/:id/delete' do
+  Budget.delete_by_id(params[:id])
+  redirect '/budgets'
+end

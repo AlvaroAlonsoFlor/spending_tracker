@@ -3,6 +3,7 @@
   Limit :<%= @budget.amount %> |
   Amount remaining: <%= @budget.money_left %> |
   <button type="button" category="button"><a href="/budgets/<%= @budget.id %>/edit">Edit</a>
+  <form action="/budgets/<%= @budget.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button></form>
 </h2>
 
 <% if @budget.transactions == nil %>
