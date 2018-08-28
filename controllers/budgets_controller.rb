@@ -11,14 +11,18 @@ get '/budgets' do
   erb(:'budgets/index')
 end
 
+# NEW
+
+get '/budgets/new' do
+  erb(:'budgets/new')
+end
+
 # SHOW
 
 get '/budgets/:id' do
   @budget = Budget.find_by_id(params[:id])
   erb(:'budgets/show')
 end
-
-# NEW
 
 # CREATE
 
