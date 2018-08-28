@@ -49,8 +49,10 @@ class TestBudget < MiniTest::Test
     assert_equal('2018/08/31', @budget1.finish_date)
   end
 
-  def test_spending
-    transactions = [@transaction1, @transaction2]
-    assert_equal(11, @budget1.spending(transactions))
-  end
+  # Found better solution interacting with databases
+  
+  # def test_spending
+  #   transactions = [@transaction1, @transaction2]
+  #   assert_equal(11, @budget1.spending(transactions))
+  # end
 end

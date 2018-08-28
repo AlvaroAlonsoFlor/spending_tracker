@@ -43,10 +43,20 @@ class Budget
     result.map { |transaction| Transaction.new(transaction)  }
   end
 
+  # It was useful to test it, but not very practic
+  # def spending(transactions)
+  #   amounts = transactions.map { |transaction| transaction.amount }
+  #   amounts.reduce(:+)
+  # end
 
-  def spending(transactions)
-    amounts = transactions.map { |transaction| transaction.amount }
-    amounts.reduce(:+)
+  def spending
+    # transactions = Budget.transactions
+    # amoun - sum of all transactions amount
+  end
+
+  def money_left
+    # @amount - spending
+
   end
 
 
