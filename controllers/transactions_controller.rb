@@ -29,7 +29,7 @@ get '/transactions/filter/tag' do
   erb(:'transactions/filter')
 end
 
-get '/transaction/filter/merchant' do
+get '/transactions/filter/merchant' do
   @transactions = Transaction.filter_by_merchant(params[:merchant_id])
   erb(:'transactions/filter')
 end

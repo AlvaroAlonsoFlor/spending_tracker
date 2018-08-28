@@ -1,7 +1,7 @@
 <ul>
   <span> <span>Filter by:</span>
 
-    <button type="button" name="button"> date
+    <button type="button" name="button">
     <form class="" action="/transactions/filter/date" method="get">
       Month
       <input type="number" name="month" min="1" max="12" required>
@@ -25,6 +25,23 @@
       </select>
 
       <input type="submit" value="Search tag">
+
+    </form>
+    </button>
+
+    <button type="button" name="button">
+    <form class="" action="/transactions/filter/merchant" method="get">
+      Merchant
+
+      <select class="" name="merchant_id">
+
+        <% for merchant in @merchants %>
+        <option value="<%= merchant.id %>"><%= merchant.name %></option>
+        <% end %>
+
+      </select>
+
+      <input type="submit" value="Search merchant">
 
     </form>
     </button>
