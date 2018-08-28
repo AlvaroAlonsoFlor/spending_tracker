@@ -1,1 +1,8 @@
 <h2>Your total spending is: <%= Transaction.total_amount %></h2>
+
+<% for budget in @budgets %>
+  <% if budget.money_left <= 20 %>
+    <h2>  <%= budget.name %> budget balance is <%= budget. money_left %> </h2>
+
+  <% end %>
+<% end %>
