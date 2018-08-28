@@ -1,8 +1,19 @@
 <ul>
   <span> <span>Filter by:</span>
-    <form class="" action="/transactions/" method="get">
+
+    <button type="button" name="button"> date
+    <form class="" action="/transactions/filter" method="get">
+      Month
+      <input type="number" name="month" min="1" max="12">
+      Year
+      <input type="number" name="year" min="2015" max="2100" step="1">
+
+      <input type="submit" value="Search date"/>
+
+
 
     </form>
+    </button>
     </span>
 
   <% for transaction in @transactions %>
