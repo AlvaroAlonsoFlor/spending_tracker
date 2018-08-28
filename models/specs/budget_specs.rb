@@ -7,7 +7,7 @@ class TestBudget < MiniTest::Test
     data = {
       'name' => 'January',
       'amount' => 500,
-      'start_date' => '2018/08/01'
+      'start_date' => '2018/08/01',
       'finish_date' => '2018/08/31'
     }
     @budget1 = Budget.new(data)
@@ -15,7 +15,7 @@ class TestBudget < MiniTest::Test
   end
 
   def test_has_a_name
-    assert_equal("January", @budget1.name )
+    assert_equal('January', @budget1.name )
   end
 
   def test_has_amount
