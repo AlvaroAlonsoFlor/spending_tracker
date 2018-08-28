@@ -2,6 +2,7 @@
 require_relative('../models/merchant')
 require_relative('../models/tag')
 require_relative('../models/transaction')
+require_relative('../models/budget')
 
 # MERCHANTS
 
@@ -58,3 +59,14 @@ transaction2 = Transaction.new({
 
 transaction1.save
 transaction2.save
+
+# BUDGETS
+
+budget1 = Budget.new({
+  'name' => 'August',
+  'amount' => 500,
+  'start_date' => '2018/08/01',
+  'finish_date' => '2018/08/31'
+})
+
+budget1.save
