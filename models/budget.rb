@@ -55,7 +55,10 @@ class Budget
   #   amounts.reduce(:+)
   # end
 
+
+
   def spending
+    return 0 if @transactions == nil
     amounts = @transactions.map { |transaction| transaction.amount }
     amounts.reduce(:+)
   end

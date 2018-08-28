@@ -26,6 +26,12 @@ end
 
 # CREATE
 
+post '/budgets' do
+  new_budget = Budget.new(params)
+  new_budget.save
+  redirect '/budgets'
+end
+
 # EDIT
 
 # UPDATE
