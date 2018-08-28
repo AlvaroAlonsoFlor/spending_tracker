@@ -8,6 +8,7 @@ also_reload('../models/*')
 # INDEX
 
 get '/transactions' do
+  @tags = Tag.all
   @transactions = Transaction.sort_by_date
   erb(:'transactions/index')
 end
@@ -21,7 +22,7 @@ get '/transactions/filter/date' do
 end
 
 get '/transactions/filter/tag' do
-  @transactions = Transaction.filter_by_tag(params[:id])
+  @transactions = Transaction.filter_by_tag(params[:tag_id])
   erb(:'transactions/filter')
 end
 

@@ -12,7 +12,22 @@
     </form>
     </button>
 
-    
+    <button type="button" name="button">
+    <form class="" action="/transactions/filter/tag" method="get">
+      Tag
+
+      <select class="" name="tag_id">
+
+        <% for tag in @tags %>
+        <option value="<%= tag.id %>"><%= tag.category %></option>
+        <% end %>
+
+      </select>
+
+      <input type="submit" value="Search tag">
+
+    </form>
+    </button>
 
 
     </span>
