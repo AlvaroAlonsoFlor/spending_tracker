@@ -21,4 +21,14 @@ class Budget
     results = SqlRunner.run(sql, values)
     @id = results[0]['id'].to_i
   end
+
+  def update
+    sql = "UPDATE budgets
+    SET
+    name = $1, amount = $2, start_date = $3, finish_date = $4
+    WHERE id = $5
+    "
+    values = [@name, @amount, @start_date, @finish_date, @id]
+    results = SqlRunner.run(sql, values)
+  end
 end
