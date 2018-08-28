@@ -31,4 +31,16 @@ class Budget
     values = [@name, @amount, @start_date, @finish_date, @id]
     results = SqlRunner.run(sql, values)
   end
+
+  def self.map_items(items)
+    items.map { |item| Budget.new(item)  }
+  end
+
+  def self.all
+    sql = "SELECT * FROM budgets"
+    results = SqlRunner.run(sql)
+    map_items(results)
+  end
+
+
 end
