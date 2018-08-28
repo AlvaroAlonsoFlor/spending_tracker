@@ -1,0 +1,17 @@
+<form class="" action="/budgets/<%= @budget.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="<%= @budget.name %>" />
+
+  <label for="amount">Amount:</label>
+  <input id="amount" type="number" name="amount" min="0" value="<%= @budget.amount %>" />
+
+  <label for="start_date">Start date:</label>
+  <input id="start_date" type="date" name="start_date" min="2018/01/01" max="2100/01/01" value="<%= @budget.start_date %>">
+
+  <label for="finish_date">Finish date:</label>
+  <input type="date" name="finish_date" min="2018/01/01" max="2100/01/01" value="<%= @budget.finish_date %>">
+
+  <input type='submit' value="Edit budget" >
+</form>

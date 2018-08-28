@@ -36,7 +36,7 @@ end
 
 get '/budgets/:id/edit' do
   @budget = Budget.find_by_id(params[:id])
-  erb(:'budget/edit')
+  erb(:'budgets/edit')
 end
 
 # UPDATE
