@@ -34,6 +34,11 @@ end
 
 # EDIT
 
+get '/budgets/:id/edit' do
+  @budget = Budget.find_by_id(params[:id])
+  erb(:'budget/edit')
+end
+
 # UPDATE
 
 # DELETE
