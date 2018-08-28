@@ -7,7 +7,8 @@ also_reload('../models/*')
 # INDEX
 
 get '/budgets' do
-  "hello"
+  @budgets = Budget.all
+  erb(:'budgets/index')
 end
 
 # SHOW
