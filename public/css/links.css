@@ -20,3 +20,7 @@ a:hover {
 a.main_links:hover {
   color: orange;
 }
+
+.main_li:hover {
+  border-bottom: 3px solid orange;
+}
