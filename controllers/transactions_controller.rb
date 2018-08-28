@@ -8,6 +8,9 @@ also_reload('../models/*')
 # INDEX
 
 get '/transactions' do
+  # for merchant filter
+  @merchants = Merchant.all
+  # for tag filter
   @tags = Tag.all
   @transactions = Transaction.sort_by_date
   erb(:'transactions/index')
@@ -23,6 +26,11 @@ end
 
 get '/transactions/filter/tag' do
   @transactions = Transaction.filter_by_tag(params[:tag_id])
+  erb(:'transactions/filter')
+end
+
+get '/transaction/filter/merchant' do
+  @transactions = Transaction.filter_by_merchant(params[:merchant_id])
   erb(:'transactions/filter')
 end
 
