@@ -3,9 +3,9 @@
 
     <button type="button" name="button">
     <form class="" action="/transactions/filter/date" method="get">
-      Month
+      <label for="month">Month</label>
       <input type="number" name="month" min="1" max="12" required>
-      Year
+      <label for="year">Year</label>
       <input type="number" name="year" min="2015" max="2100" step="1" required>
 
       <input type="submit" value="Search date"/>
@@ -14,31 +14,25 @@
 
     <button type="button" name="button">
     <form class="" action="/transactions/filter/tag" method="get">
-      Tag
 
+      <label for="tag_id">Tag</label>
       <select class="" name="tag_id">
-
         <% for tag in @tags %>
         <option value="<%= tag.id %>"><%= tag.category %></option>
         <% end %>
-
       </select>
 
       <input type="submit" value="Search tag">
-
     </form>
     </button>
 
     <button type="button" name="button">
     <form class="" action="/transactions/filter/merchant" method="get">
-      Merchant
-
+      <label for="merchant_id">Merchant</label>
       <select class="" name="merchant_id">
-
         <% for merchant in @merchants %>
         <option value="<%= merchant.id %>"><%= merchant.name %></option>
         <% end %>
-
       </select>
 
       <input type="submit" value="Search merchant">
@@ -47,7 +41,7 @@
     </button>
 
 
-    </span>
+    <br>
 
   <% for transaction in @transactions %>
   <li class="display_area"> Tag: <%= transaction.tag.category %> |
