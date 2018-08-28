@@ -41,4 +41,9 @@ end
 
 # UPDATE
 
+put '/budgets/:id' do
+  Budget.new(params).update
+  redirect '/budgets'
+end
+
 # DELETE
