@@ -90,14 +90,14 @@ class Transaction
     map_items(result)
   end
 
-  def self.filter_by_month(year, month)
+  def self.filter_by_date(year, month)
 
     sql = "SELECT * FROM transactions
     WHERE EXTRACT(YEAR FROM transaction_date) = $1
     AND EXTRACT(MONTH FROM transaction_date) = $2"
     values = [year, month]
     result = SqlRunner.run(sql, values)
-    return if result.count == 0 
+    return if result.count == 0
     map_items(result)
 
   end
