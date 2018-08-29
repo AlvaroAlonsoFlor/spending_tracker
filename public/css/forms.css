@@ -10,23 +10,17 @@ input[type="submit"] {
   background-color: #3eb0f7;
   color: white;
   padding: 5px;
-  width: 50%;
+  width: auto;
+  font-variant: small-caps;
 }
 
-/* input[type="text"] {
-  font-size: 1em;
-
+label {
+  font-variant: small-caps;
 }
-
-input[type="submit"] {
-  font-size: 1em;
-} */
 
 /* Filter */
 
 
 .flex-form {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }

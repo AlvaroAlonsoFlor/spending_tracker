@@ -15,6 +15,7 @@ button:hover {
   display: inline;
   border: solid 1px rgb(63, 191, 127);
   color: green;
+  font-size: 1.2em;
 }
 
 .new_button a {
