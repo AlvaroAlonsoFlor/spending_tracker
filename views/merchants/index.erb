@@ -1,15 +1,22 @@
-<ul>
-  <% for merchant in @merchants %>
-  <li class="display_area">
-    Id: <%= merchant.id %> |
-    Merchant: <%= merchant.name %> |
-    <button type="button" name="button"><a href="/merchants/<%= merchant.id %>/edit">Edit</a>
-    <% if merchant.transactions.count == 0 %>
-    <form action="/merchants/<%= merchant.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form>
-    <% else %>
-  </button><p>This merchant can't be deleted because is linked to one or more transactions</p>
 
-    <% end %>
-   </li>
-  <% end %>
-</ul>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Options</th>
+
+    </tr>
+    <% for merchant in @merchants %>
+    <tr class="display_area">
+      <th><%= merchant.id %></th>
+      <th><%= merchant.name %></th>
+      <th>
+        <button type="button" name="button"><a href="/merchants/<%= merchant.id %>/edit">Edit</a>
+          <% if merchant.transactions.count == 0 %>
+        <form action="/merchants/<%= merchant.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form>
+          <% else %>
+        </button><p>This merchant can't be deleted because is linked to one or more transactions</p>
+          <% end %>
+       </th>
+    </tr>
+      <% end %>
