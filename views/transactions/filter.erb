@@ -1,21 +1,31 @@
-<ul>
-  <% if @transactions == nil %>
-    <h1>No matches found</h1>
+<% if @transactions == nil %>
+  <h1>No matches found</h1>
 
-  <% else %>
+<% else %>
 
+  <table>
+    <tr>
+      <th>Tag</th>
+      <th>Merchant</th>
+      <th>Description</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>ID</th>
+      <th>Options</th>
+    </tr>
     <% for transaction in @transactions %>
-    <li class="display_area"> Tag: <%= transaction.tag.category %> |
-      Merchant: <%= transaction.merchant.name %> |
-      Description: <%= transaction.description %> | Amount <%= transaction.amount %> |
-      Date: <%= transaction.transaction_date %> |
-      Id: <%= transaction.id %> |
+    <tr class="display_area">
+      <th><%= transaction.tag.category %></th>
+      <th><%= transaction.merchant.name %></th>
+      <th><%= transaction.description %></th>
+      <th><%= transaction.amount %> </th>
+      <th> <%= transaction.transaction_date %> </th>
+      <th> <%= transaction.id %> </th>
+      <th><button><a href="/transactions/<%= transaction.id %>/edit">Edit</a>
 
-        <button type="button" description="button"><a href="/transactions/<%= transaction.id %>/edit">Edit</a>
-
-        <form action="/transactions/<%= transaction.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form>
-      </li>
+      <form action="/transactions/<%= transaction.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form> </th>
+    </tr>
     <% end %>
-  <% end %>
+</table>
 
-</ul>
+<% end %>
