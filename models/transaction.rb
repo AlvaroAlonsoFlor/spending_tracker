@@ -132,9 +132,37 @@ class Transaction
 
   end
 
+  # Submethods for filter_all
+
+  def year_filter_query(params)
+    if  params[:year]
+      "WHERE EXTRACT(YEAR FROM transaction_date) = #{params[:year]}"
+    else
+      return ""
+    end
+  end
+
+  # We change the query depending on the result of the year query
+
+  def month_filter_query(params)
+    while year_filter_query(params)
+      if params[:month]
+        
+      end
+    end
+  end
+
   def tag_filter_query(params)
     if params[:tag_id]
         "WHERE tag_id = #{params[:tag_id]}"
+    else
+      return ""
+    end
+  end
+
+  def merchant_filter_query(params)
+    if params[:merchant_id]
+      "WHERE tag_id = #{params[:tag_id]}"
     else
       return ""
     end
