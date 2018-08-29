@@ -1,6 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('tag')
 require_relative('merchant')
+require ('pry-byebug')
 
 class Transaction
   attr_reader(:id)
@@ -124,17 +125,20 @@ class Transaction
 
   def self.filter_all(params)
     sql = "SELECT * FROM transactions
+    $1
+    $2
     "
-
-    tag_id = "WHERE tag_id = #{params[:tag_id]}"
-
-    merchant_id
+    values = [Transaction.year_filter_query(params), Transaction.month_filter_query(params)]
+    result = SqlRunner.run(sql, values)
+    binding.pry
+    return if result.count == 0
+    map_items(result)
 
   end
 
-  # Submethods for filter_all
+  # SUBMETHODS FOR self.filter_all
 
-  def year_filter_query(params)
+  def self.year_filter_query(params)
     if  params[:year]
       "WHERE EXTRACT(YEAR FROM transaction_date) = #{params[:year]}"
     else
@@ -144,7 +148,7 @@ class Transaction
 
   # We change the query depending on the result of the year query
 
-  def month_filter_query(params)
+  def self.month_filter_query(params)
     return "" if params[:month] == nil
 
     if year_filter_query(params) != ""
@@ -152,7 +156,6 @@ class Transaction
     else
         "AND EXTRACT(YEAR FROM transaction_date) = #{params[:month]}"
     end
-
 
   end
 
