@@ -17,13 +17,13 @@ li {
   width: auto;
 }
 
-th {
-  border: 1px solid LightSkyBlue;
+table {
+  width: 100%;
 }
 
 th {
+  border: 1px solid LightSkyBlue;
   padding: 0.6em;
-
 }
 
 /* Basic classes */
@@ -38,6 +38,15 @@ th {
 
 .warning_box {
   background-color: rgba(255,204,0, 0.9);
+  margin: auto;
+  padding: 3px;
+  width: auto;
+  text-align: center;
+  border: solid 1px white;
+}
+
+.alert_box {
+  background-color: red;
   margin: auto;
   padding: 3px;
   width: auto;

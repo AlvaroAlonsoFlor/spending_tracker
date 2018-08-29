@@ -4,7 +4,11 @@
 
 
 <% for budget in @budgets %>
-  <% if budget.money_left <= 20 %>
+  <% if budget.money_left < 0 %>
+  <div class="alert_box">
+    <h2>  <%= budget.name %> budget balance is <%= budget. money_left %> </h2>
+  </div>
+  <% elsif budget.money_left <= 20 %>
     <div class="warning_box">
       <h2>  <%= budget.name %> budget balance is <%= budget. money_left %> </h2>
     </div>
