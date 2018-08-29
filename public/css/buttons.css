@@ -16,6 +16,9 @@ button:hover {
   border: solid 1px rgb(63, 191, 127);
   color: green;
   font-size: 1.2em;
+  margin: auto;
+  height: auto;
+  width: auto;
 }
 
 .new_button a {
