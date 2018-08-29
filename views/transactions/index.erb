@@ -1,8 +1,7 @@
+<div class="flex-form">
 
-  <span>
-
-    <button type="button" name="button">
-    <form class="" action="/transactions/filter/date" method="get">
+  <div>
+    <form action="/transactions/filter/date" method="get">
       <label for="month">Month</label>
       <input id="month" type="number" name="month" min="1" max="12" required>
       <label for="year">Year</label>
@@ -10,24 +9,23 @@
 
       <input type="submit" value="Search date"/>
     </form>
-    </button>
+  </div>
 
-    <button type="button" name="button">
-    <form class="" action="/transactions/filter/tag" method="get">
+  <div>
+  <form action="/transactions/filter/tag" method="get">
 
-      <label for="tag_id">Tag</label>
-      <select id="tag_id" name="tag_id">
-        <% for tag in @tags %>
-        <option value="<%= tag.id %>"><%= tag.category %></option>
-        <% end %>
-      </select>
+    <label for="tag_id">Tag</label>
+    <select id="tag_id" name="tag_id">
+      <% for tag in @tags %>
+      <option value="<%= tag.id %>"><%= tag.category %></option>
+      <% end %>
+    </select>
 
-      <input type="submit" value="Search tag">
-    </form>
-    </button>
-
-    <button type="button" name="button">
-    <form class="" action="/transactions/filter/merchant" method="get">
+    <input type="submit" value="Search tag">
+  </form>
+</div>
+  <div>
+    <form action="/transactions/filter/merchant" method="get">
       <label for="merchant_id">Merchant</label>
       <select id="merchant_id" class="" name="merchant_id">
         <% for merchant in @merchants %>
@@ -37,8 +35,10 @@
 
       <input type="submit" value="Search merchant">
 
-    </form>
-    </button>
+      </form>
+  </div>
+</div>
+
 
 
     <br>
