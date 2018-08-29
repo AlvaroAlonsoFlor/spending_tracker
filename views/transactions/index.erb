@@ -1,12 +1,12 @@
-<ul>
-  <span> <span>Filter by:</span>
+
+  <span>
 
     <button type="button" name="button">
     <form class="" action="/transactions/filter/date" method="get">
       <label for="month">Month</label>
-      <input type="number" name="month" min="1" max="12" required>
+      <input id="month" type="number" name="month" min="1" max="12" required>
       <label for="year">Year</label>
-      <input type="number" name="year" min="2015" max="2100" step="1" required>
+      <input id="year" type="number" name="year" min="2015" max="2100" step="1" required>
 
       <input type="submit" value="Search date"/>
     </form>
@@ -16,7 +16,7 @@
     <form class="" action="/transactions/filter/tag" method="get">
 
       <label for="tag_id">Tag</label>
-      <select class="" name="tag_id">
+      <select id="tag_id" name="tag_id">
         <% for tag in @tags %>
         <option value="<%= tag.id %>"><%= tag.category %></option>
         <% end %>
@@ -29,7 +29,7 @@
     <button type="button" name="button">
     <form class="" action="/transactions/filter/merchant" method="get">
       <label for="merchant_id">Merchant</label>
-      <select class="" name="merchant_id">
+      <select id="merchant_id" class="" name="merchant_id">
         <% for merchant in @merchants %>
         <option value="<%= merchant.id %>"><%= merchant.name %></option>
         <% end %>

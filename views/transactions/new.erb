@@ -1,7 +1,7 @@
 <form method="post" action="/transactions">
 
     <label for="tag_id">Tag:</label>
-      <select id="tag" name="tag_id">
+      <select id="tag_id" name="tag_id">
         <% for tag in @tags %>
           <option value="<%= tag.id %>"> <%= tag.category %></option>
 

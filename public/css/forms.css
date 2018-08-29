@@ -1,4 +1,16 @@
-/* table {
-  font-size: 2em;
-  font-variant: small-caps;
+
+input, textarea, select {
+  padding: 1%;
+  min-width: 20px;
+  font-size: 1em;
+  margin: 1%;
+}
+
+/* input[type="text"] {
+  font-size: 1em;
+
+}
+
+input[type="submit"] {
+  font-size: 1em;
 } */
