@@ -145,11 +145,15 @@ class Transaction
   # We change the query depending on the result of the year query
 
   def month_filter_query(params)
-    while year_filter_query(params)
-      if params[:month]
-        
-      end
+    return "" if params[:month] == nil
+
+    if year_filter_query(params) != ""
+        "AND EXTRACT(YEAR FROM transaction_date) = #{params[:month]}"
+    else
+        "AND EXTRACT(YEAR FROM transaction_date) = #{params[:month]}"
     end
+
+
   end
 
   def tag_filter_query(params)
