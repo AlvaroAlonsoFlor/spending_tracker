@@ -1,18 +1,24 @@
-<ul>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Budget</th>
+    <th>Remaining budget</th>
+    <th>Options</th>
+
+  </tr>
   <% for budget in @budgets %>
-  <li class="display_area">
-    Id: <%= budget.id %> |
-    Name: <%= budget.name %> |
-    Budget: <%= budget.amount %> |
-    Remaining Budget: <%= budget.money_left %> |
+  <tr class="display_area">
+    <th><%= budget.id %></th>
+    <th><%= budget.name %></th>
+    <th><%= budget.amount %></th>
+    <th><%= budget.money_left %></th>
+    <th>
+      <button type="button" category="button"><a href="/budgets/<%= budget.id %>">Show</a>
 
-    <button type="button" category="button"><a href="/budgets/<%= budget.id %>">Show</a>
+      <button type="button" category="button"><a href="/budgets/<%= budget.id %>/edit">Edit</a>
 
-    <button type="button" category="button"><a href="/budgets/<%= budget.id %>/edit">Edit</a>
-
-    <form action="/budgets/<%= budget.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button></form>
-
-   </li>
-   <% end %>
-
-</ul>
+      <form action="/budgets/<%= budget.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button></form>
+     </th>
+  </tr>
+  <% end %>

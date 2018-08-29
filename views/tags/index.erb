@@ -1,17 +1,24 @@
-<ul>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Category</th>
+    <th>Options</th>
+
+  </tr>
   <% for tag in @tags %>
-  <li class="display_area">
-    Id: <%= tag.id %> |
-    tag: <%= tag.category %> |
-    <button type="button" category="button"><a href="/tags/<%= tag.id %>/edit">Edit</a>
+  <tr class="display_area">
+    <th><%= tag.id %></th>
+    <th><%= tag.category %></th>
+    <th>
+      <button type="button" category="button"><a href="/tags/<%= tag.id %>/edit">Edit</a>
 
-    <% if tag.transactions.count == 0 %>
-      <form action="/tags/<%= tag.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form>
-    <% else %>
-  </button><p>This tag can't be deleted because is linked to one or more transactions</p>
-    <% end %>
+      <% if tag.transactions.count == 0 %>
+        <form action="/tags/<%= tag.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button> </form>
+      <% else %>
+        </button><p>This tag can't be deleted because is linked to one or more transactions</p>
+      <% end %>
 
-   </li>
-   <% end %>
+    </th>
+  </tr>
 
-</ul>
+  <% end %>
