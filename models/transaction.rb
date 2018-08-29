@@ -122,5 +122,23 @@ class Transaction
     map_items(result)
   end
 
+  def self.filter_all(params)
+    sql = "SELECT * FROM transactions
+    "
+
+    tag_id = "WHERE tag_id = #{params[:tag_id]}"
+
+    merchant_id
+
+  end
+
+  def tag_filter_query(params)
+    if params[:tag_id]
+        "WHERE tag_id = #{params[:tag_id]}"
+    else
+      return ""
+    end
+  end
+
 
 end

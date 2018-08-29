@@ -32,6 +32,15 @@ get '/transactions/filter/merchant' do
   erb(:'transactions/filter')
 end
 
+# A filter for all
+
+get 'transactions/filter/all' do
+  Transaction.filter_by_date(params[:year], params[:month])
+  Transaction.filter_by_tag(params[:tag_id])
+  Transaction.filter_by_merchant(params[:merchant_id])
+
+end
+
 # NEW
 
 get '/transactions/new' do
