@@ -17,6 +17,15 @@ li {
   width: auto;
 }
 
+th {
+  border: 1px solid LightSkyBlue;
+}
+
+th {
+  padding: 0.6em;
+
+}
+
 /* Basic classes */
 
 .center {
