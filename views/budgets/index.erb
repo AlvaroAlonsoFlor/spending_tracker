@@ -6,6 +6,8 @@
     <th>Name</th>
     <th>Budget</th>
     <th>Remaining budget</th>
+    <th>Starting Date</th>
+    <th>Finishing Date</th>
     <th>Options</th>
 
   </tr>
@@ -15,6 +17,8 @@
     <th><%= budget.name %></th>
     <th><%= budget.amount %></th>
     <th><%= budget.money_left %></th>
+    <th><%= budget.start_date %></th>
+    <th><%= budget.finish_date %></th>
     <th>
       <button type="button" category="button"><a href="/budgets/<%= budget.id %>">Show</a>
 
