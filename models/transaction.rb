@@ -124,12 +124,9 @@ class Transaction
   end
 
   def self.filter_all(params)
-    sql = "SELECT * FROM transactions
-    $1
-    $2
-    "
-    values = [Transaction.year_filter_query(params), Transaction.month_filter_query(params)]
-    result = SqlRunner.run(sql, values)
+    sql = "SELECT * FROM transactions " + Transaction.year_filter_query(params)
+      + " " + Transaction.month_filter_query(params)
+    result = SqlRunner.run(sql)
     binding.pry
     return if result.count == 0
     map_items(result)
