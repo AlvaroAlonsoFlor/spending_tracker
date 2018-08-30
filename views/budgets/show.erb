@@ -1,21 +1,51 @@
 
-<h2><%= @budget.name %> budget
-  <button type="button" category="button"><a href="/budgets/<%= @budget.id %>/edit">Edit</a>
-  <form action="/budgets/<%= @budget.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button></form></h2>
 
-<h3>From <%= @budget.start_date %> to <%= @budget.finish_date %> </h3>
-
-<h3>
-  Limit :<%= @budget.amount %>
-</h3>
-
-<h3>Amount remaining: <%= @budget.money_left %></h3>
+  <div class="info_box">
+    <h2><%= @budget.name %> budget
+      <button type="button" category="button"><a href="/budgets/<%= @budget.id %>/edit">Edit</a>
+      <form action="/budgets/<%= @budget.id %>/delete" method="post"> <button type="submit" formmethod="post"><a>Delete</a></button></form></h2>
+  </div>
 
 
 
-<% if @budget.transactions == nil %>
-  <h3>There are no transactions to display</h3>
-<% else %>
+
+  <div class="small_info_box">
+    <span>From <%= @budget.start_date %> to <%= @budget.finish_date %> </span>
+  </div>
+
+
+  <br>
+
+  <% if @budget.money_left < 0 %>
+  <div class="alert_box">
+    <h2><span>Limit :<%= @budget.amount %></span> <span>Amount remaining: <%= @budget. money_left %></span> </h2>
+  </div>
+  <% elsif @budget.money_left <= 20 %>
+    <div class="warning_box">
+      <h2><span>Limit :<%= @budget.amount %></span> <span>Amount remaining: <%= @budget. money_left %></span> </h2>
+    </div>
+
+  <% else %>
+    <div class="green_box">
+      <h2><span>Limit :<%= @budget.amount %></span> <span>Amount remaining: <%= @budget. money_left %></span> </h2>
+    </div>
+  <% end %>
+
+
+
+
+  <% if @budget.transactions == nil %>
+    <h3>There are no transactions to display</h3>
+  <% else %>
+
+
+
+
+  <br>
+
+  <div class="info_box">
+    <h2 class="small_caps">Transactions</h2>
+  </div>
 
 <table>
   <tr>

@@ -27,9 +27,16 @@ th {
   padding: 0.6em;
 }
 
+span {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
 /* Basic classes */
 
-
+.small_caps {
+  font-variant: small-caps;
+}
 
 .center {
   align-self: center;
@@ -39,6 +46,7 @@ th {
 
 .warning_box {
   background-color: rgba(255,204,0, 0.9);
+  font-variant: small-caps;
   margin: auto;
   padding: 3px;
   width: auto;
@@ -48,6 +56,17 @@ th {
 
 .alert_box {
   background-color: red;
+  font-variant: small-caps;
+  margin: auto;
+  padding: 3px;
+  width: auto;
+  text-align: center;
+  border: solid 1px white;
+}
+
+.green_box {
+  background-color: #4BB543;
+  font-variant: small-caps;
   margin: auto;
   padding: 3px;
   width: auto;
@@ -57,11 +76,24 @@ th {
 
 .info_box {
   background-color: rgba(47,146,215, 0.9);
+  font-variant: small-caps;
   margin: auto;
   padding: 3px;
   width: auto;
   text-align: center;
   border: solid 1px white;
+
+}
+
+.small_info_box {
+  background-color: rgba(47,146,215, 0.9);
+  font-variant: small-caps;
+  margin: auto;
+  padding: 5px;
+  width: auto;
+  text-align: center;
+  border: solid 1px white;
+
 
 }
 
