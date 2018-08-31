@@ -82,7 +82,7 @@ class Transaction
   def self.total_amount
     transactions = self.all
     amounts = transactions.map { |transaction| transaction.amount }
-    amounts.reduce(:+)
+    amounts.reduce(:+).round(2)
   end
 
   def self.sort_by_date
