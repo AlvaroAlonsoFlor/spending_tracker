@@ -60,11 +60,12 @@ class Budget
   def spending
     return 0 if @transactions == nil
     amounts = @transactions.map { |transaction| transaction.amount }
-    amounts.reduce(:+)
+    amounts.reduce(:+).round(2)
   end
 
   def money_left
-    return @amount - self.spending
+    return total = @amount - self.spending
+    total.round(2)
   end
 
   def self.map_items(items)
