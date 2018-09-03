@@ -64,8 +64,8 @@ class Budget
   end
 
   def money_left
-    return total = @amount - self.spending
-    total.round(2)
+    total = @amount - self.spending
+    return total.round(2)
   end
 
   def self.map_items(items)
